@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Board from "./Board";
 
 function calculateWinner(board) {
@@ -37,6 +37,10 @@ const Game = () => {
     setXIsNext(true);
   };
 
+  useEffect(() => {
+    setPlayWinner(winner);
+  });
+
   const handleSquareChange = (index) => {
     const copiedBoard = [...board];
     if (copiedBoard[index] || winner) {
@@ -54,8 +58,12 @@ const Game = () => {
     <div>
       <label>Next Turn: {xIsNext ? "X" : "O"}</label>
       <Board squares={board} handleClick={handleSquareChange} />
-      <button onClick={Reload}>Nueva Partida</button>
-      <label>WINNER: {winner}</label>
+      <label>WINNER: {playWinner}</label>
+      <div>
+        <button onClick={Reload} style={{ margin: "4%" }}>
+          Nueva Partida
+        </button>
+      </div>
     </div>
   );
 };
