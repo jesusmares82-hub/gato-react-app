@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Board from "./Board";
+import { Button } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 
 function calculateWinner(board) {
   const winningPositions = [
@@ -48,16 +50,27 @@ const Game = () => {
     setBoard(copiedBoard);
   };
   return (
-    <div>
-      <label>Next Turn: {xIsNext ? "X" : "O"}</label>
-      <Board squares={board} handleClick={handleSquareChange} />
-      <label>WINNER: {winner}</label>
+    <>
       <div>
-        <button onClick={Reload} style={{ margin: "4%" }}>
-          Nueva Partida
-        </button>
+        <Alert variant="warning" className="mx-auto">
+          Next Turn: {xIsNext ? "X" : "O"}
+        </Alert>
+        <Board squares={board} handleClick={handleSquareChange} />
+        <Alert variant="danger" style={{ margin: "2%" }}>
+          {winner === "X"
+            ? "The winner is X Congrats"
+            : winner === "O"
+            ? "The winner is O Congrats!"
+            : ""}{" "}
+        </Alert>
+
+        <div>
+          <Button variant="primary" onClick={Reload} style={{ margin: "2%" }}>
+            New Game
+          </Button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

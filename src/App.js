@@ -1,5 +1,6 @@
 import "./App.css";
 import Game from "./componentes/Game";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
