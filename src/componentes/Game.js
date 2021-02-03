@@ -44,15 +44,12 @@ const Game = () => {
   const handleSquareChange = (index) => {
     const copiedBoard = [...board];
     if (copiedBoard[index] || winner) {
-      setPlayWinner(winner);
-
       return;
     }
 
     copiedBoard[index] = xIsNext ? "X" : "O";
     setXIsNext(!xIsNext);
     setBoard(copiedBoard);
-    setPlayWinner(winner);
   };
   return (
     <div>
