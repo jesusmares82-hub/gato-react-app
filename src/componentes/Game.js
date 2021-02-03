@@ -39,7 +39,7 @@ const Game = () => {
 
   useEffect(() => {
     setPlayWinner(winner);
-  });
+  }, winner);
 
   const handleSquareChange = (index) => {
     const copiedBoard = [...board];
