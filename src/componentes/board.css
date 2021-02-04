@@ -1,8 +1,10 @@
 .Board {
   border-radius: 10px;
-  width: 350px;
-  height: 350px;
+  width: 345px;
+  height: 340px;
   margin: auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }

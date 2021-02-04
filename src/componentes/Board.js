@@ -7,7 +7,7 @@ const Board = ({ squares, handleClick }) => {
     handleClick(i);
   };
   return (
-    <div className="Board">
+    <div className="Board mt-5">
       <Square value={squares[0]} index={0} handleClickOnSquare={handler} />
       <Square value={squares[1]} index={1} handleClickOnSquare={handler} />
       <Square value={squares[2]} index={2} handleClickOnSquare={handler} />
