@@ -4,7 +4,6 @@ import { Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
-import { ListGroup } from "react-bootstrap";
 import { calculateWinner } from "../helpers";
 
 const styles = {
